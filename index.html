@@ -1,491 +1,484 @@
-import React, { useState } from 'react';
-import { Mail, MapPin, Linkedin, Calendar, GraduationCap, Star, User, ChevronRight, BookOpen, ExternalLink, Building2, Ticket, Users, Briefcase } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monza Rayyan Kamesjwara | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .text-textDark { color: #1e293b; }
+        .text-textMuted { color: #64748b; }
+        .bg-pastelBlue { background-color: #e0f2fe; }
+        .shadow-soft { box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-blue-200">
 
-export default function App() {
-  const [activeSection, setActiveSection] = useState('home');
-
-  const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(id);
-    }
-  };
-
-  const organizations = [
-    {
-      role: "Event Organizer",
-      org: "Music Agriculture X-Pression",
-      period: "2025 - Present",
-      desc: "Planned and executed music-based events as part of the Event Organizer division, supporting creative and entertainment-focused programs. Coordinated event logistics, including scheduling, technical preparation, and on-site execution to ensure smooth event flow. Collaborated with internal teams and performers to deliver engaging music events for the IPB student community. Supported talent handling and stage management, ensuring readiness of performers and equipment during events. Contributed to audience engagement initiatives, enhancing participation and overall event experience."
-    },
-    {
-      role: "External Relations - Outreach Specialist 1",
-      org: "AIESEC in IPB",
-      period: "2025 - Present",
-      desc: "Cultivate and maintain strategic relationships with external stakeholders. Focused on establishing corporate partnerships and ensuring effective synergy to support organizational initiatives."
-    },
-    {
-      role: "Co-Founder",
-      org: "RELATE.HUB",
-      period: "2023-2024",
-      desc: "Instrumental in the establishment and structural development of the organization. Directed volunteer teams and spearheaded social programs to maximize community impact."
-    },
-    {
-      role: "Vice Director",
-      org: "Radio Kanisius",
-      period: "2024-2025",
-      desc: "Administered daily broadcasting operations. Supervised radio personnel and formulated engaging content strategies to ensure high-quality media delivery to the student body."
-    },
-    {
-      role: "Head of Public Relations",
-      org: "The Bright Knight Foundation",
-      period: "2024-2025",
-      desc: "Developed and executed comprehensive communication strategies. Managed digital presence across social media channels to amplify public visibility and organizational reach."
-    },
-    {
-      role: "Head of Public Relations",
-      org: "Aliansi Supporter Kanisius",
-      period: "2024-2025",
-      desc: "Governed community engagement initiatives. Orchestrated activities to strengthen collective identity and ensured precise execution of public messaging."
-    },
-    {
-      role: "Volunteer Teacher",
-      org: "Rumah Hebat Anak Indonesia",
-      period: "2023-2024",
-      desc: "Committed to community service by facilitating educational sessions for children, promoting knowledge accessibility and social development."
-    },
-    {
-      role: "Member of Student Council",
-      org: "Legionnaire I",
-      period: "2023-2024",
-      desc: "Engaged in the strategic planning and execution of institutional events. Participated in collaborative decision-making processes that enhanced student welfare and streamlined extracurricular activities."
-    }
-  ];
-
-  const events = [
-    {
-      name: "Canisius College Cup 39",
-      role: "Staff of Event",
-      desc: "Managed comprehensive hospitality and technical requirements for top-tier guest stars, notably Tulus. Successfully negotiated performer fees, resulting in significant budget savings without compromising service quality."
-    },
-    {
-      name: "Canisius College Cup 38",
-      role: "Staff of Event",
-      desc: "Served as the primary liaison for prominent artists including Kunto Aji, TBA, and Raissa Anggiani. Ensured seamless coordination of technical riders and delivered excellent hospitality."
-    },
-    {
-      name: "Agrisymphony 2025",
-      role: "Staff of Public Relation",
-      desc: "Directed artist relations and technical compliance for Diskoria. Ensured optimal stage readiness, clear communication, and flawless performance execution."
-    },
-    {
-      name: "Canisius College Graduation",
-      role: "Head of Entertainment",
-      desc: "Supervised complete event operations across multiple divisions. Handled direct coordination with Nidji, managing technical requirements and delivering a highly structured graduation ceremony."
-    },
-    {
-      name: "Seri X Art 2026",
-      role: "Head of Entertainment",
-      desc: "Curated and directed the overarching event flow. Successfully coordinated theater performers and musical bands to deliver a cohesive and engaging audience experience."
-    },
-    {
-      name: "11th Management Euphoria",
-      role: "Head of Liaison Officer",
-      desc: "Led the PR division to formulate branding strategies, manage media relations, and drive promotional campaigns to maximize the event visibility."
-    },
-    {
-      name: "Prom Night Management 62",
-      role: "Head of Public Relations",
-      desc: "Managed strategic communications and promotional activities, ensuring high engagement and clear information delivery for the graduating cohort."
-    },
-    {
-      name: "AIESEC Gala Night",
-      role: "Stage Manager",
-      desc: "Directed live program flows, oversaw stage readiness, and ensured strict adherence to event rundowns for various performers and guest speakers."
-    },
-    {
-      name: "Inaugurasi MAXX 22",
-      role: "Staff of Event",
-      desc: "Oversaw technical preparations and stage setups to ensure seamless transitions and readiness for all band performances."
-    },
-    {
-      name: "One Hour Closer",
-      role: "Head of Event",
-      desc: "Orchestrated strategic offline engagement and managed event logistics, successfully drawing in a large offline crowd through effective planning."
-    },
-    {
-      name: "Jakarta Community Goes to Genus",
-      role: "Staff of Fundraising",
-      desc: "Supported event financing by managing weekly fundraising operations, ensuring sustainable financial support for community programs."
-    },
-    {
-      name: "Canisius Day",
-      role: "Operations & Crowd Control",
-      desc: "Managed crowd safety protocols and logistical operations for a large-scale school-wide function, ensuring a secure environment for all attendees."
-    },
-    {
-      name: "Parents Day",
-      role: "Operations & Crowd Control",
-      desc: "Oversaw on-ground operations and visitor safety, coordinating with multiple teams to facilitate a smooth and welcoming experience for parents."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl tracking-tight text-blue-900">MRK.</div>
-            <div className="hidden md:flex space-x-6">
-              {['home', 'about', 'organizations', 'events', 'writing', 'skills'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item)}
-                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-blue-600 ${
-                    activeSection === item ? 'text-blue-600' : 'text-slate-500'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
+    <nav class="fixed w-full z-40 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold tracking-tight text-blue-600">MRK.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#organizations" class="hover:text-blue-600 transition-colors">Organizations</a>
+                <a href="#committees" class="hover:text-blue-600 transition-colors">Committees</a>
+                <a href="#publications" class="hover:text-blue-600 transition-colors">Publications</a>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
 
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section id="home" className="min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50/50 py-20 relative overflow-hidden">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-64 h-64 bg-slate-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
-
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center relative z-10">
-            <div className="space-y-8">
-              <div className="inline-block px-5 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-bold tracking-wide mb-2 shadow-sm border border-blue-200">
-                Management Professional & Event Specialist
-              </div>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight tracking-tight">
-                Monza Rayyan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Kamesjwara</span>
-              </h1>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                A highly dedicated Management student specializing in strategic event planning, artist relations, and operational execution. Committed to delivering flawless, high-impact experiences.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <button 
-                  onClick={() => scrollTo('about')}
-                  className="px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200 flex items-center gap-2"
-                >
-                  Professional Profile <ChevronRight size={18} />
-                </button>
-                <a 
-                  href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="px-8 py-3 rounded-full bg-white text-slate-700 font-medium hover:bg-slate-50 transition-colors border border-slate-200 shadow-sm flex items-center gap-2 group"
-                >
-                  <Linkedin size={18} className="text-blue-600 group-hover:scale-110 transition-transform" /> Connect on LinkedIn
+    <section id="home" class="pt-32 pb-20 px-6 min-h-screen flex items-center relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
+                Management Student @ IPB University | GPA: 3.44
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-textDark mb-6 tracking-tight">
+                Monza Rayyan <br><span class="text-blue-600">Kamesjwara</span>
+            </h1>
+            <p class="text-lg text-textMuted mb-10 max-w-2xl mx-auto leading-relaxed">
+                Detail-oriented and communicative event professional with extensive experience as a Liaison Officer (LO) handling top-tier Indonesian guest stars (Tulus, Nidji, Kunto Aji, Diskoria). Dedicated to producing well-executed, impactful events through strategic coordination and effective stakeholder management.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#committees" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">View Projects</a>
+                <a href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" target="_blank" class="px-8 py-3 bg-white text-textDark border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-all shadow-sm flex items-center justify-center gap-2">
+                    <i class="fab fa-linkedin text-blue-600"></i> LinkedIn
                 </a>
-              </div>
+                <a href="mailto:kamesjwaramonza@gmail.com" class="px-8 py-3 bg-white text-textDark border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-all shadow-sm flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope text-red-500"></i> Email Me
+                </a>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        {/* About & Education Section */}
-        <section id="about" className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-16 items-start">
-              
-              {/* Profile Details */}
-              <div className="space-y-8">
-                <div className="flex items-center gap-3 text-blue-600 mb-6">
-                  <User size={28} />
-                  <h2 className="text-3xl font-bold text-slate-900">Professional Summary</h2>
+    <section id="skills" class="py-24 px-6 bg-white relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 shadow-soft rounded-2xl">
+                    <h3 class="text-xl font-bold text-textDark mb-6 flex items-center gap-3">
+                        <i class="fas fa-laptop-code text-blue-500"></i> Hard Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Event Coordination</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">LO & Artist Handling</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Public Speaking</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Negotiation</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">English (Intermediate)</span>
+                        <span class="px-4 py-2 bg-blue-50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Graphic Design (Canva)</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 shadow-soft rounded-2xl">
+                    <h3 class="text-xl font-bold text-textDark mb-6 flex items-center gap-3">
+                        <i class="fas fa-users text-blue-500"></i> Soft Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Leadership</span>
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Teamwork</span>
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Communication</span>
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Problem Solving</span>
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Time Management</span>
+                        <span class="px-4 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organizations" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Organizations & Volunteer</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-globe text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">AIESEC In IPB</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">External Relations - External Stakeholders | 2025</p>
+                        <p class="text-textMuted text-sm">Built and maintained relationships with external stakeholders, optimizing organizational partnerships and outreach.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-microphone text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">Radio Kanisius</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Vice Director | 2023 - 2025</p>
+                        <p class="text-textMuted text-sm">Led broadcast operations and team management, ensuring high-quality content delivery and effective internal communication.</p>
+                    </div>
                 </div>
                 
-                <div className="prose prose-lg text-slate-600">
-                  <p className="leading-relaxed">
-                    I am a Management student at IPB University with an extensive track record in the event organizing sector. Having actively contributed to more than twenty organizational and event committees, my core expertise resides in artist relations and operational coordination. As a Liaison Officer, I have successfully managed communications and logistics for top-tier Indonesian guest stars, including Tulus, Nidji, Kunto Aji, and Diskoria, ensuring unparalleled hospitality and technical readiness.
-                  </p>
-                  <p className="leading-relaxed mt-4">
-                    Recognized for exceptional communication capabilities, meticulous attention to detail, and steadfast reliability in high-pressure environments. I excel at executing complex operational workflows, mitigating risks, and driving strategic initiatives to produce impactful and memorable event outcomes.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                  <div className="flex items-center gap-3 text-slate-600">
-                    <MapPin size={20} className="text-blue-500 shrink-0" />
-                    <span className="font-medium">Jakarta Pusat, DKI Jakarta</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-slate-600">
-                    <Mail size={20} className="text-blue-500 shrink-0" />
-                    <a href="mailto:kamesjwaramonza@gmail.com" className="font-medium hover:text-blue-600 transition-colors">
-                      kamesjwaramonza@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Education */}
-              <div>
-                <div className="flex items-center gap-3 text-blue-600 mb-6">
-                  <GraduationCap size={28} />
-                  <h2 className="text-3xl font-bold text-slate-900">Education</h2>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-bold text-slate-800 text-xl">IPB University</h3>
-                      <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2025 - Present</span>
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-hands-helping text-xl"></i>
                     </div>
-                    <p className="font-semibold text-slate-700 mb-3">Bachelor of Management</p>
-                    <ul className="space-y-2 text-slate-600">
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-                        <span>Faculty of Economics and Management.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-                        <span><strong>Semester 1 GPA: 3.44</strong></span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-                        <span>Admitted through the National Selection Based on Test (SNBT) with a score of 658.</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-bold text-slate-800 text-xl">Canisius College</h3>
-                      <span className="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">2022 - 2025</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">RELATE.HUB</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Co-Founder | 2023 - 2025</p>
+                        <p class="text-textMuted text-sm">Co-founded and scaled an initiative connecting communities, overseeing strategic direction and program execution.</p>
                     </div>
-                    <p className="font-semibold text-slate-700 mb-3">Senior High School</p>
-                    <ul className="space-y-2 text-slate-600">
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-                        <span>Academic Focus: Anthropology, Economics, Biology, and Sociology.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-                        <span>Graduated with an outstanding average report score of 88.1.</span>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-              </div>
 
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">Bright Knight Foundation</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2"> Head of Public Relation | 2024 - 2025</p>
+                        <p class="text-textMuted text-sm">Participated in organizational activities and social initiatives, contributing to the foundation's core missions and community outreach.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-flag text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">Aliansi Supporter Kanisius</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Head of Public Relation</p>
+                        <p class="text-textMuted text-sm">Organized student participation and mobilized enthusiasm to support school events and sports competitions, fostering a strong sense of community.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl shadow-soft flex gap-6 items-start">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fas fa-ticket-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-textDark">Narasi.Tv</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2"> Volunteer - Registration Un-Class Session NarasiXGrab</p>
+                        <p class="text-textMuted text-sm">Facilitated the participant registration process, ensuring a smooth and organized workflow for the NarasiXGrab Un-Class Session.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </section>
+        </div>
+    </section>
 
-        {/* Organizations Section */}
-        <section id="organizations" className="py-20 bg-slate-50 border-t border-slate-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-center mb-12 text-center">
-              <div className="flex items-center gap-3 text-blue-600 mb-4">
-                <Building2 size={32} />
-                <h2 className="text-3xl font-bold text-slate-900">Organizational Experience</h2>
-              </div>
-              <p className="text-slate-500 max-w-2xl text-lg">Demonstrated leadership and commitment through active participation in prominent organizations, driving collaborative success and operational efficiency.</p>
+    <section id="committees" class="py-24 px-6 bg-white relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Event Committees</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-textMuted max-w-2xl mx-auto">Highlighting key events where I managed operations, led teams, and negotiated with top-tier talent.</p>
             </div>
 
-            {/* Changed from grid layout to single column for longer descriptions */}
-            <div className="space-y-6">
-              {organizations.map((item, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-md transition-all group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-slate-800 text-xl mb-1 group-hover:text-blue-600 transition-colors">{item.role}</h3>
-                      <p className="text-blue-600 font-semibold text-base mb-4">{item.org}</p>
-                      <p className="text-slate-600 text-base leading-relaxed">{item.desc}</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Music Agriculture X-Pression -->
+                <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white lg:col-span-3">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:scale-[1.05] transition-transform shrink-0">
+                            <i class="fas fa-guitar text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-1">Gala Night AIESEC 2026</h3>
+                            <p class="text-md font-semibold text-blue-500 mb-3">Event Comittee- Stage Manager</p>
+                            <ul class="text-textMuted text-sm flex-grow leading-relaxed list-disc list-inside space-y-1">
+                                <li>Managed overall stage operations during events by ensuring all performances ran according to the rundown and within the allocated time. Coordinated closely with talents, including MCs, bands, and performers, as well as technical teams such as sound and lighting to ensure seamless execution. Oversaw stage readiness, handled cueing (in/out) for each performance, and ensured smooth transitions between acts. Proactively resolved on-site issues to maintain event flow and deliver a professional show experience.</li>
+                            </ul>
+                        </div>
                     </div>
-                    {item.period && (
-                      <div className="shrink-0">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600">
-                          {item.period}
-                        </span>
-                      </div>
-                    )}
-                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Committees & Events Section */}
-        <section id="events" className="py-20 bg-white border-t border-slate-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-center mb-16 text-center">
-              <div className="flex items-center gap-3 text-blue-600 mb-4">
-                <Briefcase size={32} />
-                <h2 className="text-3xl font-bold text-slate-900">Event & Committee Portfolio</h2>
-              </div>
-              <p className="text-slate-500 max-w-2xl text-lg">A detailed breakdown of significant event management roles, highlighting individual projects and specific contributions in each committee.</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {events.map((event, index) => (
-                <div key={index} className="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                  <div className="flex-1">
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5">
-                      <Ticket size={24} />
+                <!-- Seri X Art 2026 -->
+                <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white">
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+                        <i class="fas fa-crown mr-1"></i> Head Role
                     </div>
-                    <h3 className="font-bold text-slate-800 text-lg mb-2 leading-tight">{event.name}</h3>
-                    <p className="text-blue-600 font-semibold text-sm mb-4">{event.role}</p>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      {event.desc}
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-calendar-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Seri X Art 2026</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Event, Entertainment</p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Served as LO for guest stars, curated entertainment elements, and led pre-event activities to maximize attendance. Oversaw end-to-end entertainment operations seamlessly.
                     </p>
-                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Writing Section */}
-        <section id="writing" className="py-20 bg-slate-900 text-slate-50 border-t border-slate-800">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center gap-3 text-blue-400 mb-12">
-              <BookOpen size={32} />
-              <h2 className="text-3xl font-bold text-white text-center">Publications & Analytical Writing</h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Merdeka Belajar, Terjerat Paradigma?",
-                  date: "November 2024",
-                  platform: "Kompasiana",
-                  url: "https://www.kompasiana.com/monzarayyankamesjwara2180/672e389fed6415352f5ee136/merdeka-belajar-terjerat-paradigma",
-                  desc: "An analytical evaluation of the 'Merdeka Belajar' educational curriculum in Indonesia, examining its practical implementation and systemic impact on academic stakeholders."
-                },
-                {
-                  title: "Angin Sejarah dan Layar Masa Depan Kolese Kanisius",
-                  date: "September 2024",
-                  platform: "Kompasiana",
-                  url: "https://www.kompasiana.com/monzarayyankamesjwara2180/66e9426fc925c45018628ee3/angin-sejarah-dan-layar-masa-depan-kolese-kanisius",
-                  desc: "A comprehensive institutional reflection discussing the historical milestones and future strategic trajectory of Canisius College."
-                },
-                {
-                  title: "Ribuan Suara Satu Dukungan",
-                  date: "May 2024",
-                  platform: "Kompasiana",
-                  url: "https://www.kompasiana.com/monza/66473b72de948f2039351c22/ribuan-suara-satu-dukungan",
-                  desc: "An observational piece detailing the sociological dynamics of student unity, collective support mechanisms, and institutional culture during large-scale events."
-                },
-                {
-                  title: "Perbedaan Agama Bukanlah Suatu Permasalahan dalam Sebuah Hubungan",
-                  date: "April 2023",
-                  platform: "Kompasiana",
-                  url: "https://www.kompasiana.com/monza/642d18d708a8b55db76c4972/perbedaan-agama-bukanlah-suatu-permasalahan-dalam-sebuah-hubungan",
-                  desc: "An editorial analysis on tolerance and interpersonal relationships, challenging sociological barriers related to religious demographics."
-                }
-              ].map((pub, index) => (
-                <a 
-                  key={index}
-                  href={pub.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-slate-800 border border-slate-700 p-8 rounded-3xl hover:border-blue-500 hover:bg-slate-800/80 transition-all block"
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-blue-900 bg-blue-400 px-3 py-1 rounded-full">
-                      {pub.platform}
-                    </span>
-                    <span className="text-sm text-slate-400 flex items-center gap-1 font-medium">
-                      <Calendar size={14} /> {pub.date}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors flex items-start justify-between">
-                    {pub.title}
-                    <ExternalLink size={20} className="text-slate-500 group-hover:text-blue-400 shrink-0 ml-4 mt-1" />
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {pub.desc}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section id="skills" className="py-20 bg-slate-50 border-t border-slate-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Core Competencies</h2>
-              <p className="text-slate-500 max-w-2xl mx-auto text-lg">A synthesis of operational management expertise, stakeholder communication, and strategic problem-solving capabilities.</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Hard Skills */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-slate-800 pb-2 border-b-2 border-slate-200">Technical Proficiencies</h3>
-                <div className="space-y-4">
-                  {[
-                    { name: 'Event Operations & Logistics', desc: 'Proficient in conceptualizing, organizing, and executing large-scale events with rigorous schedule management and cross-functional coordination.' },
-                    { name: 'Liaison Officer & Artist Handling', desc: 'Expertise in managing high-profile guest relations, ensuring strict compliance with technical riders and hospitality requirements.' },
-                    { name: 'Public Speaking & Hosting', desc: 'Capable of addressing large audiences, facilitating formal events, and delivering clear institutional messaging.' },
-                    { name: 'Vendor & Fee Negotiation', desc: 'Demonstrated ability to negotiate contractual terms and artist fees, optimizing budgetary allocations efficiently.' },
-                    { name: 'Bilingual Business Communication', desc: 'Proficient in English and Indonesian for professional correspondence, documentation, and operational directives.' },
-                    { name: 'Digital Asset Creation', desc: 'Experienced in utilizing Canva for the development of promotional marketing materials and visual branding.' }
-                  ].map((skill, index) => (
-                    <div key={index} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                      <h4 className="font-bold text-blue-700 mb-2">{skill.name}</h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">{skill.desc}</p>
+                <!-- Canisius College Cup -->
+                <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white">
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+                        <i class="fas fa-crown mr-1"></i> Head Role
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Soft Skills */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-slate-800 pb-2 border-b-2 border-slate-200">Professional Attributes</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {[
-                    { name: 'Strategic Leadership', desc: 'Competent in guiding cross-functional teams, driving operational focus, and making decisive actions under pressure.' },
-                    { name: 'Collaborative Teamwork', desc: 'Adept at fostering synergetic environments and aligning diverse team members toward unified objectives.' },
-                    { name: 'Stakeholder Communication', desc: 'Skilled in articulating complex directives and managing expectations across internal and external partners.' },
-                    { name: 'Crisis Management', desc: 'Capable of rapid risk assessment and the implementation of immediate, practical solutions during operational contingencies.' },
-                    { name: 'Time & Resource Management', desc: 'Highly organized in meeting stringent deadlines and optimizing productivity across concurrent tasks.' },
-                    { name: 'Dynamic Adaptability', desc: 'Flexible in navigating volatile event environments and pivoting strategies to accommodate sudden logistical changes.' }
-                  ].map((skill, index) => (
-                    <div key={index} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-indigo-400">
-                      <h4 className="font-bold text-slate-800 mb-2">{skill.name}</h4>
-                      <p className="text-slate-600 text-sm leading-relaxed">{skill.desc}</p>
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-handshake text-2xl"></i>
                     </div>
-                  ))}
+                    <h3 class="text-xl font-bold mb-1">Canisius College Cup XXXIX</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Liaison Officer Manager</p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Supervised the LO team and handled top guest stars (Tulus & Raissa Anggiani). Successfully negotiated performance fees, saving considerable budget for the committee.
+                    </p>
                 </div>
-              </div>
+
+                <!-- Management Euphoria -->
+                <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white">
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+                        <i class="fas fa-crown mr-1"></i> Head Role
+                    </div>
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-bullhorn text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">11th Management Euphoria</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Public Relations</p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Led the LO team in managing external communications. Identified, secured, and coordinated with speakers and guest stars for successful event participation.
+                    </p>
+                </div>
+
+                <!-- Canisius Graduation -->
+                <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white">
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+                        <i class="fas fa-crown mr-1"></i> Head Role
+                    </div>
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Canisius Graduation 25</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Celebration</p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Event Coordinator for overall rundown execution. Handled protocol coordination and successfully negotiated artist performance costs for Nidji and Rumahsakit.
+                    </p>
+                </div>
+
+                <!-- Agrisymphony -->
+                 <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full bg-white">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-music text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Agrisymphony 2025</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">PR Talent Division</p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Liaison Officer for Diskoria, managing event preparation. Conducted early-stage fee negotiations from 88 million to 50 million Rupiah effectively.
+                    </p>
+                </div>
+
+                <!-- One Hour Closer -->
+                 <div class="glass-card p-6 rounded-2xl shadow-soft group hover:shadow-lg transition-all duration-300 flex flex-col h-full relative overflow-hidden bg-white">
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+                        <i class="fas fa-crown mr-1"></i> Head Role
+                    </div>
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl mb-5 flex items-center justify-center text-blue-600 group-hover:scale-[1.1] transition-transform shrink-0">
+                        <i class="fas fa-users-cog text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">One Hour Closer Management 62</h3>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Event </p>
+                    <p class="text-textMuted text-sm flex-grow leading-relaxed">
+                        Led an 8-person team to execute operational aspects. Successfully attracted 150 participants through coordinated promotion and precise real-time coordination.
+                    </p>
+                </div>
             </div>
-          </div>
-        </section>
-
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col items-center justify-center space-y-4">
-          <div className="font-bold text-3xl tracking-tight text-white mb-2">MRK.</div>
-          <div className="flex space-x-6">
-            <a href="mailto:kamesjwaramonza@gmail.com" className="hover:text-blue-400 transition-colors p-2">
-              <Mail size={28} />
-            </a>
-            <a href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors p-2">
-              <Linkedin size={28} />
-            </a>
-          </div>
-          <p className="text-base mt-8 pt-8 border-t border-slate-800/50 w-full max-w-md">
-            &copy; {new Date().getFullYear()} Monza Rayyan Kamesjwara. All rights reserved.
-          </p>
         </div>
-      </footer>
+    </section>
+
+    <!-- NEW SECTION: Publications & Writing -->
+    <section id="publications" class="py-24 px-6 relative bg-slate-50 border-t border-gray-200/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Publications & Writing</h2>
+                <div class="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-textMuted max-w-2xl mx-auto">Sharing insights and perspectives on education, society, and management through published articles.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://www.kompasiana.com/monzarayyankamesjwara2180/672e389fed6415352f5ee136/merdeka-belajar-terjerat-paradigma" target="_blank" class="glass-card p-6 rounded-2xl shadow-soft flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 bg-white group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-pen-nib text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Kompasiana Article</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-textDark mb-2 group-hover:text-blue-600 transition-colors">Merdeka Belajar: Terjerat Paradigma</h3>
+                    <p class="text-textMuted text-sm mb-4 flex-grow">A critical analysis exploring the educational paradigms in Indonesia's current learning framework.</p>
+                    <div class="text-blue-600 text-sm font-semibold flex items-center">
+                        Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <a href="https://www.kompasiana.com/monza/66473b72de948f2039351c22/ribuan-suara-satu-dukungan" target="_blank" class="glass-card p-6 rounded-2xl shadow-soft flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300 bg-white group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-pen-nib text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Kompasiana Article</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-textDark mb-2 group-hover:text-blue-600 transition-colors">Ribuan Suara, Satu Dukungan</h3>
+                    <p class="text-textMuted text-sm mb-4 flex-grow">An insightful piece reflecting on community support, solidarity, and the power of collective voices.</p>
+                    <div class="text-blue-600 text-sm font-semibold flex items-center">
+                        Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="ai-chat-btn" class="w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-transform hover:scale-110 flex items-center justify-center group">
+            <i class="fas fa-robot text-2xl group-hover:animate-pulse"></i>
+        </button>
     </div>
-  );
-}
+
+    <!-- AI Chat Modal -->
+    <div id="ai-chat-modal" class="hidden fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-100 flex flex-col transition-all" style="height: 450px;">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><i class="fas fa-sparkles mr-2 text-yellow-300"></i> Tanya AI Assistant</h3>
+            <button id="close-chat" class="text-white/80 hover:text-white transition-colors"><i class="fas fa-times text-lg"></i></button>
+        </div>
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-3 bg-gray-50 text-sm flex flex-col">
+            <div class="bg-blue-100 text-blue-800 p-3 rounded-xl rounded-tl-sm max-w-[85%] self-start shadow-sm">
+                Halo! Saya AI assistant untuk portofolio Monza. Ada yang ingin Anda ketahui tentang pengalaman event, organisasi, tulisan di Kompasiana, atau keahlian Monza?
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-gray-100">
+            <form id="ai-chat-form" class="flex gap-2">
+                <input type="text" id="ai-input" class="flex-grow px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-50 text-sm" placeholder="Tanya sesuatu tentang Monza..." autocomplete="off">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-8 text-center text-textMuted text-sm border-t border-gray-200/50 bg-slate-50">
+        <p>&copy; 2026 Monza Rayyan Kamesjwara. Built with <i class="fas fa-heart text-red-500 mx-1"></i></p>
+        <p class="mt-2 text-xs">kamesjwaramonza@gmail.com 
+        </p>
+    </footer>
+
+    <script>
+        // --- Navbar Scroll Effect ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // --- Logika AI Chat Assistant (Menggunakan Gemini API) ---
+        // PENTING: Ganti string kosong di bawah ini dengan API Key Gemini milik Anda
+        const apiKey = ""; 
+        
+        const systemPrompt = `Kamu adalah AI Assistant resmi untuk representasi profesional portofolio Monza Rayyan Kamesjwara. 
+        Jawab pertanyaan seputar portofolio, pengalaman, organisasi, dan skill Monza berdasarkan data berikut: 
+        - Mahasiswa Manajemen IPB University (GPA 3.44), Alumni SMA Kolese Kanisius.
+        - Aktif di 20+ kepanitiaan dan organisasi.
+        - Skill: Event Coordination, LO & Artist Handling (Tulus, Nidji, Kunto Aji, Diskoria), Public Speaking, Negotiation, English, Canva, Leadership, Problem Solving. 
+        - Organisasi & Volunteer: External Relations AIESEC in IPB, Vice Director Radio Kanisius, Co-Founder RELATE.HUB, Bright Knight Foundation, Aliansi Supporter Kanisius, Volunteer Registration Narasi.Tv (NarasiXGrab).
+        - Kepanitiaan: Event Organizer di Music Agriculture X-Pression, Head of Event Seri X Art 2026, LO Manager Canisius College Cup, Head of PR Management Euphoria, Head of Celebration Canisius Graduation 25.
+        - Publikasi: Penulis di Kompasiana dengan artikel "Merdeka Belajar: Terjerat Paradigma" dan "Ribuan Suara Satu Dukungan".
+        - Kontak: kamesjwaramonza@gmail.com
+        Jawab dengan ramah, antusias, profesional, dan ringkas dalam bahasa Indonesia. Gunakan sapaan yang hangat.`;
+
+        async function fetchAIResponse(message, loadingId) {
+            if (!apiKey || apiKey === "MASUKKAN_API_KEY_ANDA_DISINI") {
+                updateChatMessage(loadingId, "Halo! Monza belum memasukkan API Key Gemini-nya di dalam kode, sehingga saya belum bisa menjawab secara *real-time*. Anda bisa langsung menghubungi Monza melalui email kamesjwaramonza@gmail.com atau melalui LinkedIn!", 'error');
+                return;
+            }
+
+            try {
+                // Konfigurasi exponential backoff retry sudah diterapkan dalam environment ini
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: message }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+                
+                if (!response.ok) throw new Error('API Error');
+                
+                const data = await response.json();
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, saya sedang tidak bisa memproses jawaban saat ini.";
+                updateChatMessage(loadingId, reply, 'ai');
+            } catch (error) {
+                console.error(error);
+                updateChatMessage(loadingId, "Maaf, terjadi kendala jaringan atau masalah sistem. Silakan hubungi Monza melalui kamesjwaramonza@gmail.com.", 'error');
+            }
+        }
+
+        function addChatMessage(text, type) {
+            const chatMessages = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            const id = 'msg-' + Date.now();
+            msgDiv.id = id;
+            
+            if (type === 'user') {
+                msgDiv.className = 'bg-blue-600 text-white p-3 rounded-xl rounded-tr-sm max-w-[85%] self-end shadow-sm text-sm';
+            } else if (type === 'loading') {
+                msgDiv.className = 'bg-blue-100 text-blue-800 p-3 rounded-xl rounded-tl-sm max-w-[85%] self-start shadow-sm flex space-x-2 items-center py-4';
+                msgDiv.innerHTML = '<div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div><div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div><div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>';
+            } else {
+                msgDiv.className = 'bg-blue-100 text-blue-800 p-3 rounded-xl rounded-tl-sm max-w-[85%] self-start shadow-sm text-sm';
+            }
+            
+            if (type !== 'loading') {
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                msgDiv.innerHTML = formattedText;
+            }
+            
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function updateChatMessage(id, text, type) {
+            const msgDiv = document.getElementById(id);
+            if(msgDiv) {
+                msgDiv.className = type === 'error' ? 'bg-red-50 text-red-600 border border-red-200 p-3 rounded-xl rounded-tl-sm max-w-[85%] self-start shadow-sm text-sm' : 'bg-blue-100 text-blue-800 p-3 rounded-xl rounded-tl-sm max-w-[85%] self-start shadow-sm text-sm';
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                msgDiv.innerHTML = formattedText;
+            }
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        document.getElementById('ai-chat-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('ai-input');
+            const message = input.value.trim();
+            if(!message) return;
+
+            addChatMessage(message, 'user');
+            input.value = '';
+
+            const loadingId = addChatMessage('', 'loading');
+            fetchAIResponse(message, loadingId);
+        });
+
+        document.getElementById('ai-chat-btn').addEventListener('click', () => {
+            const modal = document.getElementById('ai-chat-modal');
+            modal.classList.toggle('hidden');
+            if(!modal.classList.contains('hidden')) {
+                document.getElementById('ai-input').focus();
+            }
+        });
+
+        document.getElementById('close-chat').addEventListener('click', () => {
+            document.getElementById('ai-chat-modal').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
