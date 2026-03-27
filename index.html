@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monza Rayyan Kamesjwara | Portfolio</title>
     
-    <!-- Google Fonts: Outfit (Modern Sans-Serif) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,14 +36,13 @@
         }
     </script>
 
-    <!-- Custom CSS for Patterns, Glassmorphism, and Animations -->
+    <!-- Custom CSS -->
     <style>
         body {
-            background-color: #FFFDF7; /* pastelCream */
+            background-color: #FFFDF7;
             color: #2C3E50;
         }
 
-        /* Subtle Grid Pattern Background */
         .bg-grid-pattern {
             background-image: 
                 linear-gradient(to right, rgba(227, 242, 253, 0.5) 1px, transparent 1px),
@@ -53,7 +52,6 @@
             position: relative;
         }
 
-        /* Geometric Blobs */
         .blob {
             position: absolute;
             border-radius: 50%;
@@ -72,7 +70,6 @@
             background-color: #F0F7FF;
         }
 
-        /* Glassmorphism Classes */
         .glass-card {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(12px);
@@ -88,7 +85,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -99,7 +95,6 @@
             transform: translateY(0);
         }
         
-        /* Staggered transition for grids */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
@@ -121,48 +116,70 @@
                 <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
                 <a href="#experience" class="hover:text-blue-400 transition-colors">Organizations</a>
                 <a href="#projects" class="hover:text-blue-400 transition-colors">Committees</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
             </div>
             <!-- Mobile Menu Button -->
             <button class="md:hidden text-textDark focus:outline-none" id="mobile-menu-btn">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
+        <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white/95 backdrop-blur-md absolute w-full border-b border-gray-100" id="mobile-menu">
             <div class="flex flex-col px-6 py-4 space-y-4 text-center">
                 <a href="#about" class="mobile-link font-medium">About</a>
                 <a href="#skills" class="mobile-link font-medium">Skills</a>
                 <a href="#experience" class="mobile-link font-medium">Organizations</a>
                 <a href="#projects" class="mobile-link font-medium">Committees</a>
-                <a href="#contact" class="mobile-link font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div class="max-w-4xl mx-auto text-center reveal">
-            <span class="inline-block py-1 px-3 rounded-full bg-pastelBlue text-blue-800 text-sm font-semibold mb-6 tracking-wide">
-                Welcome to my portfolio
-            </span>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
-                Hi, I'm <br class="md:hidden"/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                    Monza Rayyan Kamesjwara
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            
+            <!-- Text Content -->
+            <div class="text-center md:text-left md:w-1/2 reveal">
+                <span class="inline-block py-1 px-4 rounded-full bg-pastelBlue text-blue-800 text-sm font-semibold mb-6 tracking-wide">
+                    Welcome to my portfolio
                 </span>
-            </h1>
-            <p class="text-xl md:text-2xl text-textMuted font-light mb-10">
-                Management Student | Event Coordinator | Public Relations Specialist
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#projects" class="px-8 py-3 rounded-full bg-textDark text-white font-medium hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    View My Work
-                </a>
-                <a href="#contact" class="px-8 py-3 rounded-full glass-card text-textDark font-medium hover:bg-white/80 transition-all">
-                    Let's Connect
-                </a>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                    Hi, I'm <br class="hidden md:block"/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                        Monza Rayyan
+                    </span>
+                </h1>
+                <p class="text-xl text-textMuted font-light mb-8 leading-relaxed">
+                    Management Student, Event Coordinator, and Public Relations Enthusiast. I bring ideas to life through well executed events and great communication.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-8">
+                    <a href="#projects" class="px-8 py-3 rounded-full bg-textDark text-white font-medium hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        View My Work
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="mailto:kamesjwaramonza@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm border border-gray-100 hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm border border-gray-100 hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/monzarayyan" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm border border-gray-100 hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
             </div>
+
+            <!-- Profile Image -->
+            <div class="md:w-1/2 flex justify-center reveal delay-100">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-400 rounded-full blur-2xl opacity-20"></div>
+                    <img src="monza.jpeg" alt="Monza Rayyan Kamesjwara" class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-4 border-white">
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -178,24 +195,24 @@
                 <div class="grid md:grid-cols-2 gap-10 items-center">
                     <div>
                         <p class="text-lg text-textMuted leading-relaxed mb-6">
-                            I am a passionate Management student at IPB University with a strong foundation in economics and management. Currently maintaining a 3.44 GPA, I combine academic excellence with a deep-seated enthusiasm for event organizing and strategic management. My journey is driven by a commitment to mastering stakeholder communication and orchestrating seamless, high-impact events in high-pressure environments.
+                            I am a Management student at IPB University with a deep passion for event organizing and public relations. I love blending my academic background in economics with real world experiences in managing events. Maintaining a good academic record is important to me but I also thrive in fast paced environments where I can communicate with different people and bring creative concepts to life.
                         </p>
                         <p class="text-lg text-textMuted leading-relaxed">
-                            Beyond academics, I am a highly active and creative individual, having participated in over 20 organizational and event committees. Serving in pivotal roles such as Head of Event and Liaison Officer for top Indonesian artists, I actively use my expertise in coordination, public relations, and negotiation to foster positive community engagement and deliver memorable experiences that leave a lasting impact.
+                            Beyond the classroom I am a very active person. I have had the chance to be part of over 20 committees and organizations taking on big responsibilities like Head of Event and Liaison Officer for top Indonesian artists. I enjoy the challenge of coordinating teams negotiating with stakeholders and making sure every event leaves a memorable mark.
                         </p>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass-card p-6 text-center bg-white/40">
                             <h3 class="text-4xl font-bold text-blue-500 mb-2">20+</h3>
-                            <p class="text-sm font-medium text-textMuted">Event & Committees</p>
+                            <p class="text-sm font-medium text-textMuted">Events Managed</p>
                         </div>
                         <div class="glass-card p-6 text-center bg-white/40">
                             <h3 class="text-4xl font-bold text-blue-500 mb-2">3.44</h3>
                             <p class="text-sm font-medium text-textMuted">Current GPA</p>
                         </div>
                         <div class="glass-card p-6 text-center bg-white/40 col-span-2">
-                            <h3 class="text-xl font-bold text-textDark mb-2">Top Guest Stars Handled</h3>
-                            <p class="text-sm text-textMuted">Tulus, Nidji, Kunto Aji, Diskoria & more</p>
+                            <h3 class="text-xl font-bold text-textDark mb-2">Top Guest Stars</h3>
+                            <p class="text-sm text-textMuted">Tulus, Nidji, Kunto Aji, Diskoria and more</p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +224,7 @@
     <section id="skills" class="py-24 px-6 relative">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What I Do Best</h2>
                 <div class="w-16 h-1 bg-pastelBlue mx-auto rounded-full"></div>
             </div>
             
@@ -219,11 +236,10 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Event Coordination</span>
-                        <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Liaison Officer & Artist Handling</span>
+                        <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Artist Handling</span>
                         <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Public Speaking</span>
                         <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Negotiation</span>
-                        <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">English (Intermediate)</span>
-                        <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Graphic Design (Canva)</span>
+                        <span class="px-4 py-2 bg-pastelBlue/50 text-blue-800 rounded-lg text-sm font-medium border border-blue-100">Graphic Design</span>
                     </div>
                 </div>
 
@@ -233,9 +249,9 @@
                         <i class="fas fa-users text-blue-500"></i> Soft Skills
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Leadership</span>
-                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Teamwork</span>
-                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Communication</span>
+                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Team Leadership</span>
+                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Collaboration</span>
+                        <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Clear Communication</span>
                         <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Problem Solving</span>
                         <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Time Management</span>
                         <span class="px-4 py-2 bg-white/60 text-textDark rounded-lg text-sm font-medium border border-gray-200">Adaptability</span>
@@ -249,73 +265,88 @@
     <section id="experience" class="py-24 px-6 relative">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Organizations & Volunteer</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Organizations and Volunteer</h2>
                 <div class="w-16 h-1 bg-pastelBlue mx-auto rounded-full"></div>
-                <p class="mt-4 text-textMuted max-w-2xl mx-auto"></p>
             </div>
 
             <div class="space-y-8">
-                <!-- Exp 1 -->
+                <!-- MAX Experience -->
                 <div class="glass-card p-8 shadow-soft reveal transition-transform hover:-translate-y-1">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                         <div>
-                            <h3 class="text-xl font-bold text-textDark">External Relations - Outreach Specialist 1</h3>
-                            <p class="text-blue-500 font-medium">AIESEC in IPB</p>
+                            <h3 class="text-xl font-bold text-textDark">Event Organizer</h3>
+                            <p class="text-blue-500 font-medium">Music Agriculture X Pression</p>
                         </div>
                         <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/50 rounded-full text-sm font-medium text-gray-600 border border-gray-200">
-                            2025 - Present
+                            2025 to Present
                         </span>
                     </div>
                     <p class="text-textMuted leading-relaxed">
-                        Built and maintained relationships with external stakeholders, including companies, NGOs, and educational institutions. Executed outreach strategies, delivered pitches, and negotiated collaboration terms to support organizational goals.
+                        I plan and execute music events for the IPB student community. My role involves coordinating logistics handling technical preparations and managing the stage to ensure everything runs smoothly. I also work closely with performers and internal teams to create an engaging experience for the audience.
+                    </p>
+                </div>
+
+                <!-- Exp 1 -->
+                <div class="glass-card p-8 shadow-soft reveal delay-100 transition-transform hover:-translate-y-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-textDark">External Relations</h3>
+                            <p class="text-blue-500 font-medium">AIESEC in IPB</p>
+                        </div>
+                        <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/50 rounded-full text-sm font-medium text-gray-600 border border-gray-200">
+                            2025 to Present
+                        </span>
+                    </div>
+                    <p class="text-textMuted leading-relaxed">
+                        I build and maintain good relationships with our external partners including companies and educational institutions. I regularly pitch ideas and negotiate collaborations to help the organization reach its goals.
                     </p>
                 </div>
 
                 <!-- Exp 2 -->
-                <div class="glass-card p-8 shadow-soft reveal delay-100 transition-transform hover:-translate-y-1">
+                <div class="glass-card p-8 shadow-soft reveal delay-200 transition-transform hover:-translate-y-1">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                         <div>
                             <h3 class="text-xl font-bold text-textDark">Vice Director</h3>
                             <p class="text-blue-500 font-medium">Radio Kanisius</p>
                         </div>
                         <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/50 rounded-full text-sm font-medium text-gray-600 border border-gray-200">
-                            2024 - 2025
+                            2024 to 2025
                         </span>
                     </div>
                     <p class="text-textMuted leading-relaxed">
-                        Managed day-to-day radio operations and coordinated program schedules. Supervised radio hosts and internal teams to maintain content consistency, strengthening internal communication and organizational planning.
+                        I managed the daily operations of the radio station and organized the broadcasting schedules. I also guided our radio hosts and teams to ensure our content was always engaging and well prepared.
                     </p>
                 </div>
 
                 <!-- Exp 3 -->
-                <div class="glass-card p-8 shadow-soft reveal delay-200 transition-transform hover:-translate-y-1">
+                <div class="glass-card p-8 shadow-soft reveal transition-transform hover:-translate-y-1">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                         <div>
-                            <h3 class="text-xl font-bold text-textDark">Co-Founder</h3>
-                            <p class="text-blue-500 font-medium">RELATE.HUB</p>
+                            <h3 class="text-xl font-bold text-textDark">Co Founder</h3>
+                            <p class="text-blue-500 font-medium">RELATE HUB</p>
                         </div>
                         <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/50 rounded-full text-sm font-medium text-gray-600 border border-gray-200">
-                            2022 - 2023
+                            2022 to 2023
                         </span>
                     </div>
                     <p class="text-textMuted leading-relaxed">
-                        Co-founded the organization and contributed to its mission, structure, and strategy. Led program initiatives, coordinated events, and managed volunteers to achieve organizational goals.
+                        I helped build the foundation of this organization and shaped its main goals. I led various programs managed our volunteers and coordinated exciting events from start to finish.
                     </p>
                 </div>
 
                 <!-- Exp 4 -->
-                <div class="glass-card p-8 shadow-soft reveal delay-300 transition-transform hover:-translate-y-1">
+                <div class="glass-card p-8 shadow-soft reveal delay-100 transition-transform hover:-translate-y-1">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                         <div>
                             <h3 class="text-xl font-bold text-textDark">Volunteer Teacher</h3>
                             <p class="text-blue-500 font-medium">Rumah Hebat Anak Indonesia</p>
                         </div>
                         <span class="inline-block mt-2 md:mt-0 px-3 py-1 bg-white/50 rounded-full text-sm font-medium text-gray-600 border border-gray-200">
-                            2022 - 2023
+                            2022 to 2023
                         </span>
                     </div>
                     <p class="text-textMuted leading-relaxed">
-                        Supported educational programs as a volunteer teacher for children. Actively participated in community service activities and contributed to organizational events aiming for positive social impact.
+                        I taught and supported children through community educational programs. It was a rewarding experience where I actively helped organize social events to bring a positive impact to the kids.
                     </p>
                 </div>
             </div>
@@ -323,12 +354,12 @@
     </section>
 
     <!-- Projects / Event Committee Section -->
-    <section id="projects" class="py-24 px-6 relative">
+    <section id="projects" class="py-24 px-6 relative mb-20">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Event Committees</h2>
                 <div class="w-16 h-1 bg-pastelBlue mx-auto rounded-full"></div>
-                <p class="mt-4 text-textMuted max-w-2xl mx-auto">Highlighting key events where I served as Head or Coordinator, managed operations, and negotiated with top-tier talent.</p>
+                <p class="mt-4 text-textMuted max-w-2xl mx-auto">Here are some key moments where I led teams managed operations and brought amazing talents to the stage.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -341,9 +372,9 @@
                         <i class="fas fa-calendar-star text-5xl opacity-50"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Seri X Art 2026</h3>
-                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Event, Entertainment</p>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Head of Event and Entertainment</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Served as LO for guest stars, curated entertainment elements, and led pre-event activities to maximize attendance. Oversaw end-to-end entertainment operations seamlessly.
+                        I guided the entertainment team and took care of the guest stars as their Liaison Officer. I managed the pre event campaigns to boost our audience and made sure the main show ran perfectly from the first act to the last.
                     </p>
                 </div>
 
@@ -358,7 +389,7 @@
                     <h3 class="text-xl font-bold mb-2">Canisius College Cup XXXIX</h3>
                     <p class="text-sm font-semibold text-blue-500 mb-3">Liaison Officer Manager</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Supervised the LO team and handled top guest stars (Tulus & Raissa Anggiani). Successfully negotiated performance fees, saving considerable budget for the committee.
+                        I led the entire LO team and personally handled our main guest stars Tulus and Raissa Anggiani. I also negotiated their performance fees successfully saving a large amount of our budget.
                     </p>
                 </div>
 
@@ -373,7 +404,7 @@
                     <h3 class="text-xl font-bold mb-2">11th Management Euphoria</h3>
                     <p class="text-sm font-semibold text-blue-500 mb-3">Head of Public Relations</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Led the LO team in managing external communications. Identified, secured, and coordinated with speakers and guest stars for successful event participation.
+                        I directed our external communications and guided the LO team. My main focus was to find the right speakers and guest stars reach out to them and coordinate their involvement in our event.
                     </p>
                 </div>
 
@@ -388,7 +419,7 @@
                     <h3 class="text-xl font-bold mb-2">Canisius Graduation 25</h3>
                     <p class="text-sm font-semibold text-blue-500 mb-3">Head of Celebration</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Event Coordinator for overall rundown execution. Handled protocol coordination and successfully negotiated artist performance costs for Nidji and Rumahsakit.
+                        I coordinated the overall event rundown and protocol. I was also in charge of negotiating the costs for bringing in our guest artists Nidji and Rumahsakit ensuring we got the best value.
                     </p>
                 </div>
 
@@ -398,9 +429,9 @@
                         <i class="fas fa-music text-5xl opacity-50"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Agrisymphony 2025</h3>
-                    <p class="text-sm font-semibold text-blue-500 mb-3">PR Talent Division</p>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Public Relations and Talent Division</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Liaison Officer for Diskoria, managing event preparation. Conducted early-stage fee negotiations from 88 million to 50 million Rupiah effectively.
+                        I worked closely with Diskoria as their Liaison Officer handling all their event preparations. I also managed the early negotiations and successfully reduced the performance fee significantly.
                     </p>
                 </div>
 
@@ -413,65 +444,35 @@
                         <i class="fas fa-users-cog text-5xl opacity-50"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">One Hour Closer Management 62</h3>
-                    <p class="text-sm font-semibold text-blue-500 mb-3">Coordinator, Event Division</p>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">Event Division Coordinator</p>
                     <p class="text-textMuted text-sm flex-grow">
-                        Led an 8-person team to execute operational aspects. Successfully attracted 150 participants through coordinated promotion and precise real-time coordination.
+                        I managed an eight person team to run the operational side of the event. Through solid teamwork and real time coordination we managed to attract and engage over 150 participants smoothly.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 relative mb-10">
-        <div class="max-w-4xl mx-auto">
-            <div class="glass-card p-10 md:p-16 shadow-soft reveal text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
-                <p class="text-textMuted mb-10 max-w-xl mx-auto">
-                    Interested in collaborating or have an event in mind? Feel free to reach out. I'm always open to discussing new projects and opportunities.
-                </p>
-
-                <!-- Simple Contact Form -->
-                <form class="max-w-lg mx-auto text-left space-y-4 mb-10" onsubmit="event.preventDefault();">
-                    <div>
-                        <label class="block text-sm font-medium text-textDark mb-1">Name</label>
-                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-textDark mb-1">Email</label>
-                        <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all" placeholder="your@email.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-textDark mb-1">Message</label>
-                        <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all resize-none" placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" class="w-full py-3 rounded-lg bg-textDark text-white font-medium hover:bg-gray-800 transition-all shadow-md">
-                        Send Message
-                    </button>
-                </form>
-
-                <!-- Social Links -->
-                <div class="flex justify-center space-x-6">
-                    <a href="mailto:kamesjwaramonza@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white text-textDark shadow-sm hover:shadow-md hover:text-blue-500 transition-all transform hover:-translate-y-1">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="py-8 text-center text-textMuted text-sm border-t border-gray-200/50">
-        <p>&copy; 2026 Monza Rayyan Kamesjwara..</p>
+    <footer class="py-10 text-center border-t border-gray-200/50 mt-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <h3 class="text-xl font-bold text-textDark mb-4">Let's Connect</h3>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="mailto:kamesjwaramonza@gmail.com" class="text-textMuted hover:text-blue-500 transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/monza-rayyan-kamesjwara" target="_blank" class="text-textMuted hover:text-blue-500 transition-colors">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/monzarayyan" target="_blank" class="text-textMuted hover:text-blue-500 transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-textMuted text-sm">&copy; 2026 Monza Rayyan Kamesjwara. Built with passion.</p>
+        </div>
     </footer>
 
-    <!-- JavaScript for Animations and Interactions -->
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
@@ -495,8 +496,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    // Optional: Stop observing once revealed
-                    // observer.unobserve(entry.target);
                 }
             });
         };
